@@ -4,10 +4,6 @@ $(document).ready(function(){
 
     $("#play").on("click", run);
 
-    $("#done").on("click", function(event){
-        stop();
-    });
-
 });
 
 var contentHtml = "<button id='play'>Play!</button>";
@@ -22,6 +18,7 @@ var ans2 = ['1996','1997','1998','1999'];
 var ans3 = [3,4,5,6];
 var answers = [ans1,ans2,ans3];
 var quizzTimer;
+var correctAns = 0, incorrectAns = 0, unanswered = 0;
 var quizzStr1 = `<h1>${que1}</h1>` + 
     `<input type="radio" name="que1" value=${ans1[0]}>${ans1[0]}` +
     `<input type="radio" name="que1" value=${ans1[1]}>${ans1[1]}` +
@@ -49,6 +46,10 @@ function run(){
     $("#playBtnDiv").hide();
     quizzTimer = setInterval(decrement,1000);
     $("#quizz").html(quizzStr);
+
+    $("#done").on("click", function(event){
+        doneQuizz();
+    });
 }
 
 function decrement(){
@@ -66,5 +67,16 @@ function stop(message){
 
 function doneQuizz(){
     stop(`You finished the quizz pretty quick!!!`);
-    $("#quizz").html("quizz finished!!");
+    
+    for(var i=0;i<questions.length;i++){
+        var sel = $(`input[name=que${i+1}]:checked`).val();
+        if(sel === "Quentin" || sel === "1997" || sel === "6"){
+            correctAns++;
+        } else if(sel === undefined){
+            unanswered++;
+        } else {
+            incorrectAns++;
+        }
+    }
+    $("#quizz").html(`quizz finished!!<br>Correct Answers : ${correctAns}<br>Unanswered : ${unanswered}<br>Incorrect Answers : ${incorrectAns}`);
 }
