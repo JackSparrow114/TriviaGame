@@ -14,6 +14,7 @@ body {
     background-color: darkgreen;
     padding: 0.5em;
     margin: 0.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .game-text {
