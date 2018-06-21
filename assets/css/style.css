@@ -1,0 +1,26 @@
+body {
+    background-color: aqua;
+    text-align: center;
+}
+
+#container {
+    background-color: brown;
+    margin: 10px 20%;
+    padding: 0.5em;
+    height: 500px;
+}
+
+#header-line {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: brown;
+    color: cornflowerblue;
+}
+
+#play {
+    height: 40px;
+    width: 120px;
+    margin: 10px auto;
+    background-color: chocolate;
+    color: cornflowerblue;
+    border: 0;
+}
