@@ -4,46 +4,59 @@ $(document).ready(function(){
 
     $("#play").on("click", run);
 
-    
+    $("#done").on("click", stop('You finished quizz early!!'));
 });
 
 var contentHtml = "<button id='play'>Play!</button>";
 var timeRem = 31;
 var quizzStr;
 var que1 = 'Who is the director of Pulp Fiction?';
-var questions = [que1];
-var ans1 = 'Quentin Tarantino';
-var answers = [ans1];
+var que2 = 'In which year titanic got released?';
+var que3 = 'How many Oscars did Forrest Gump won?';
+var questions = [que1,que2,que3];
+var ans1 = ['Quentin Tarantino','Martin Scorsese','Steve Spielberg','James Cameroon'];
+var ans2 = ['1996','1997','1998','1999'];
+var ans3 = [3,4,5,6];
+var answers = [ans1,ans2,ans3];
+var quizzTimer;
+var quizzStr1 = `<h1>${que1}</h1>` + 
+    `<input type="radio" name="que1" value=${ans1[0]}>${ans1[0]}` +
+    `<input type="radio" name="que1" value=${ans1[1]}>${ans1[1]}` +
+    `<input type="radio" name="que1" value=${ans1[2]}>${ans1[2]}` +
+    `<input type="radio" name="que1" value=${ans1[3]}>${ans1[3]}<br>`;
+
+var quizzStr2 = `<h1>${que2}</h1>` + 
+    `<input type="radio" name="que2" value=${ans2[0]}>${ans2[0]}` +
+    `<input type="radio" name="que2" value=${ans2[1]}>${ans2[1]}` +
+    `<input type="radio" name="que2" value=${ans2[2]}>${ans2[2]}` +
+    `<input type="radio" name="que2" value=${ans2[3]}>${ans2[3]}<br>`;
+
+var quizzStr3 = `<h1>${que3}</h1>` + 
+    `<input type="radio" name="que3" value=${ans3[0]}>${ans3[0]}` +
+    `<input type="radio" name="que3" value=${ans3[1]}>${ans3[1]}` +
+    `<input type="radio" name="que3" value=${ans3[2]}>${ans3[2]}` +
+    `<input type="radio" name="que3" value=${ans3[3]}>${ans3[3]}<br>`;
+
+var doneBtn = '<button id="done">Done!</button>';
+
+quizzStr = quizzStr1 + quizzStr2 + quizzStr3 + doneBtn;
+
 
 function run(){
-    //$("#playBtnDiv").hide();
+    $("#playBtnDiv").hide();
     quizzTimer = setInterval(decrement,1000);
     $("#quizz").html(quizzStr);
 }
 
 function decrement(){
     timeRem--;
-    $("#timer").html(`<h1>${timeRem}</h1>`);
+    $("#timer").html(`<h1> Time Remaining  :  ${timeRem}</h1>`);
     if(timeRem === 0){
-        stop();
+        stop("Time's Up!!");
     }
 }
 
-function stop(){
+function stop(message){
     clearInterval(quizzTimer);
-    $("#timer").html("<h1>Time's up!</h1>");
+    $("#timer").html(`<h1>${message}</h1>`);
 }
-
-function generateQuestions(){
-    for(var i = 0; i < questions.length ;i++){
-        var que = document.createElement("h1");
-        que.append(questions[i]);
-        var ans = document.createElement("INPUT");
-        ans.setAttribute("type", "radio");
-        ans.append(answers[i]);
-        document.body.appendChild(que);
-        document.body.appendChild(ans);
-    }
-}
-
-quizzStr = generateQuestions();

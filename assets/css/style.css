@@ -7,16 +7,16 @@ body {
     background-color: brown;
     margin: 10px 20%;
     padding: 0.5em;
-    height: 500px;
+    height: 900px;
 }
 
-#header-line {
+.game-text {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: brown;
     color: cornflowerblue;
 }
 
-#play {
+#play, #done {
     height: 40px;
     width: 120px;
     margin: 10px auto;
