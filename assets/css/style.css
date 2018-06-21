@@ -10,6 +10,12 @@ body {
     height: 900px;
 }
 
+#header-line {
+    background-color: darkgreen;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
 .game-text {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: brown;

@@ -4,7 +4,10 @@ $(document).ready(function(){
 
     $("#play").on("click", run);
 
-    $("#done").on("click", stop('You finished quizz early!!'));
+    $("#done").on("click", function(event){
+        stop();
+    });
+
 });
 
 var contentHtml = "<button id='play'>Play!</button>";
@@ -59,4 +62,9 @@ function decrement(){
 function stop(message){
     clearInterval(quizzTimer);
     $("#timer").html(`<h1>${message}</h1>`);
+}
+
+function doneQuizz(){
+    stop(`You finished the quizz pretty quick!!!`);
+    $("#quizz").html("quizz finished!!");
 }
