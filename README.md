@@ -1,5 +1,5 @@
 <h1>Project Title</h1>
-<h2>Transition Example</h2>
+<h2>Trivia Game!</h2>
 <p>This project is an example creating trivia game using timer functions in javascript and jQuery. It was built for the purpose of learning how to use timeout and timeinterval functions in Javascript.</p>
 Usage<br>
 <strong>https://jacksparrow114.github.io/TriviaGame/</strong>
