@@ -1,8 +1,8 @@
 <h1>Project Title</h1>
 <h2>Transition Example</h2>
-<p>This project is an example of how to use tranform property in css. It was built for the purpose of learning how to create transforms and animations in css files from scratch.</p>
-Usage<br> 
-<strong>https://jacksparrow114.github.io/Transition-Example/</strong>
+<p>This project is an example creating trivia game using timer functions in javascript and jQuery. It was built for the purpose of learning how to use timeout and timeinterval functions in Javascript.</p>
+Usage<br>
+<strong>https://jacksparrow114.github.io/TriviaGame/</strong>
 <br>
 Deployment<br>
 Deployed using Github.
